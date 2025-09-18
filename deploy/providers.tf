@@ -1,7 +1,7 @@
 data "terraform_remote_state" "eks" {
   backend = "s3"
   config = {
-    bucket  = "tf-state-bucket-918998335591"
+    bucket  = "tf-state-bucket-058264555529"
     key     = "test/eks/terraform.tfstate"
     region  = "us-west-2"
     encrypt = true
@@ -37,7 +37,7 @@ terraform {
     }
     aws = {
       source  = "hashicorp/aws"
-      version = "~> 5.0"
+      version = "~> 6.0"
     }
   }
   required_version = ">= 1.3.0"

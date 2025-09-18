@@ -108,8 +108,10 @@ This repository contains Terraform code to provision and manage Kubernetes resou
 
 - **Automated Pipeline:** Add CI/CD automation for plan/apply and validation steps.
 - **GitOPS CD for kubernetes Manifests:** Implement a GitOps approach using tools like ArgoCD or Flux to manage Kubernetes manifests.
+- **Environment Management:** Introduce support for multiple environments using tools like Kustomize.
+- **Public Endpoints:** Add support for public endpoints using AWS Load Balancer.
 - **Testing:** Add automated tests for infrastructure code (e.g., using Terratest or Checkov).
 - **Documentation:** Expand documentation with architecture diagrams and troubleshooting tips.
-- **Security:** Implement more granular IAM roles and security policies for least privilege.
+- **Security:** Implement Network policies.
 
 ---

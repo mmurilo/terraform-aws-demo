@@ -1,15 +1,15 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: hello
-  namespace: hello
+  name: hello-prod
+  namespace: hello-prod
   labels:
-    app: hello
+    app: hello-prod
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: hello
+      app: hello-prod
   strategy:
     type: RollingUpdate
     rollingUpdate:
@@ -18,15 +18,15 @@ spec:
   template:
     metadata:
       labels:
-        app: hello
+        app: hello-prod
     spec:
       containers:
-        - name: hello
+        - name: hello-prod
           image: ghcr.io/mmurilo/terraform-aws-demo/hello-svc:hello-v0.1.0
           imagePullPolicy: IfNotPresent
           env:
             - name: ENV
-              value: "Staging"
+              value: "Production"
           ports:
             - name: http
               containerPort: 8080

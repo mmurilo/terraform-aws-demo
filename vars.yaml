@@ -7,7 +7,7 @@ vpc:
   private_subnet_cidr_mask: 24
 
 eks:
-  cluster_version: "1.32"
+  cluster_version: "1.33"
   allowed_ips: []
   managed_node_groups:
     general:
@@ -15,9 +15,12 @@ eks:
         - "t4g.medium"
       ami_type: "AL2023_ARM_64_STANDARD"
       capacity_type: "SPOT"
-  
+      desired_size: 1
+      max_size: 3
+      min_size: 1
+      force_update_version: true
 
-default_tags: 
+default_tags:
   Environment: "test"
   Managed_by: "terraform"
   Organization: "My Org"
