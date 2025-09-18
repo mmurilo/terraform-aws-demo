@@ -1,15 +1,15 @@
 apiVersion: autoscaling/v2
 kind: HorizontalPodAutoscaler
 metadata:
-  name: hello
-  namespace: hello
+  name: hello-prod
+  namespace: hello-prod
   labels:
-    app: hello
+    app: hello-prod
 spec:
   scaleTargetRef:
     apiVersion: apps/v1
     kind: Deployment
-    name: hello
+    name: hello-prod
   minReplicas: 2
   maxReplicas: 10
   metrics:

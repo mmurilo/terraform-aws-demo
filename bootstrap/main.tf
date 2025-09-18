@@ -1,5 +1,5 @@
 module "s3_backend" {
-  source = "github.com/mmurilo/terraform-modules//s3-backend-bootstrap?ref=s3-backend-bootstrap-v0.2.0"
+  source = "github.com/mmurilo/terraform-modules//s3-backend-bootstrap?ref=s3-backend-bootstrap-v0.2.1"
   region = var.aws_region
 }
 
