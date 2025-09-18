@@ -6,11 +6,12 @@ This repository contains Terraform code to provision and manage Kubernetes resou
 
 ### Code Structure
 
+- **app/**: Contains application code and dockerfile.
 - **vpc/**: Provisions the network infrastructure (VPC, subnets, etc.).
 - **eks/**: Deploys the EKS (Elastic Kubernetes Service) cluster.
 - **eks-addons/**: Manages EKS add-ons (e.g., CoreDNS, kube-proxy).
 - **bootstrap/**: Handles initial setup and bootstrapping tasks.
-- **app/**: Deploys application resources to the Kubernetes cluster, including:
+- **deploy/**: Deploys application resources to the Kubernetes cluster, including:
   - Namespace creation
   - Applying manifests from the `manifests/` directory (Deployment, Service, Ingress, HPA, NetworkPolicy)
 
@@ -65,7 +66,7 @@ This repository contains Terraform code to provision and manage Kubernetes resou
      terraform apply
      ```
 
-   - Application:
+   - Deploy Application:
 
      ```bash
      cd ../deploy
@@ -93,15 +94,13 @@ This repository contains Terraform code to provision and manage Kubernetes resou
 
 ```hcl
 .
-└── "vpc"[git::https://github.com/mmurilo/terraform-modules.git//terraform-aws-vpc?ref=aws-vpc-v0.2.0]
-    ├── "vpc"[registry.terraform.io/terraform-aws-modules/vpc/aws] 5.21.0
-    └── "vpc_endpoints"[./modules/terraform-aws-vpc/modules/vpc-endpoints]
+└── "vpc"[git::https://github.com/mmurilo/terraform-modules.git//terraform-aws-vpc?ref=aws-vpc-v0.3.0]
 
 .
-└── "eks"[git::https://github.com/mmurilo/terraform-modules.git//terraform-aws-eks?ref=aws-eks-v0.2.0]
+└── "eks"[git::https://github.com/mmurilo/terraform-modules.git//terraform-aws-eks?ref=aws-eks-v0.3.0]
 
 .
-└── "eks_addons"[registry.terraform.io/aws-ia/eks-blueprints-addons/aws] 1.21.0
+└── "eks_addons"[registry.terraform.io/aws-ia/eks-blueprints-addons/aws] 1.22.0
 ```
 
 ## Areas for Improvement
