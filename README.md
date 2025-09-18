@@ -68,7 +68,7 @@ This repository contains Terraform code to provision and manage Kubernetes resou
    - Application:
 
      ```bash
-     cd ../app
+     cd ../deploy
      terraform apply
      ```
 
